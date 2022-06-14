@@ -7,7 +7,7 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ['UserName','Email','ContactNumber','Adress','Profession','ResumeFile']
 
-class UploadFileForm(forms.ModelForm):
+class UpdateForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['ResumeFile']
+        fields = ['UserName','Email','ContactNumber','Adress','Profession']
