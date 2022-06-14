@@ -10,12 +10,19 @@ from RegisterApp.serializers import UserSerializer
 
 from .forms import UserForm,UpdateForm
 
+# csrf_exempts foram adicionados para testar as funcoes por meio de plataformas de teste de requisições api (postman, insomnia)
+
+# Por conta do HTML usar por padrao apenas methodos POST e GET, apos a implementacao do front-end foi retirada as checagens de request.method nas funcoes
+
+
+# 'GET' - Retorna todos usuarios
 @csrf_exempt
 def list_users(request):
     users = User.objects.all()
     users_serializer = UserSerializer(users, many=True)
     return render(request, 'index.html', {'users': users})
 
+# 'POST' - Adiciona usuario
 @csrf_exempt
 def add_user(request):
     {'success': False }
@@ -27,7 +34,7 @@ def add_user(request):
 
     return render(request, 'form.html', {'form': form})
 
-
+# 'PUT' - Atualiza usuario
 @csrf_exempt
 def update_user(request,id=0):
     user = User.objects.get(UserId=id)
@@ -40,7 +47,7 @@ def update_user(request,id=0):
 
     return render(request, 'form.html', {'form': form, 'user': user})
 
-
+# 'DELETE' - Apaga usuario
 @csrf_exempt
 def delete_user(request, id=0):
     user = User.objects.get(UserId=id)

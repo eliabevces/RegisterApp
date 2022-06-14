@@ -9,5 +9,3 @@ RUN pip install requests==2.27.1 Django==4.0.5 django-cors-headers==3.13.0 djang
 
 
 COPY . /pythoncrud/
-
-RUN python manage.py runserver
