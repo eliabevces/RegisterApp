@@ -6,4 +6,4 @@ from RegisterApp.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=User
-        fields=('UserId','UserName','Email','ContactNumber','Adress','Profession','ResumeFileName')
+        fields=('UserId','UserName','Email','ContactNumber','Adress','Profession','ResumeFile')

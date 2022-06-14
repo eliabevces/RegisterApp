@@ -1,4 +1,4 @@
-from django.urls import re_path
+from django.urls import path
 from RegisterApp import views
 
 from django.conf.urls.static import static
@@ -6,7 +6,10 @@ from django.conf import settings
 
 
 urlpatterns = [
-    re_path(r'^user$', views.userApi),
-    re_path(r'^user/([0-9]+)$', views.userApi),
-    re_path(r'^user/savefile', views.SaveFile)
-]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    path('', views.list_users, name='list_user'),
+    path('new', views.add_user, name='add_user'),
+    path('update/<int:id>', views.update_user, name='update_user'),
+    path('delete/<int:id>', views.delete_user, name='delete_user'),
+    # path('upload_file', views.upload_file, name='upload_file')
+]
+# +static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

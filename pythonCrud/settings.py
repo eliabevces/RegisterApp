@@ -18,10 +18,7 @@ load_dotenv()
 
 BASE_DIR=Path(__file__).resolve(strict=True).parent.parent
 MEDIA_URL='/Resumes/'
-MEDIA_ROOT=os.path.join(BASE_DIR,"Resumes")
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+MEDIA_ROOT=os.path.join(BASE_DIR,"RegisterApp/Resumes")
 
 
 # Quick-start development settings - unsuitable for production
@@ -47,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'RegisterApp.apps.RegisterappConfig'
+    'RegisterApp.apps.RegisterappConfig',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

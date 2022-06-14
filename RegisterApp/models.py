@@ -7,7 +7,7 @@ class User(models.Model):
     UserName = models.CharField(max_length=100)
     Email = models.EmailField(max_length=300)
     ContactNumber = models.CharField(max_length=15)
-    Adress = models.TextField()
+    Adress = models.CharField(max_length=200)
     Profession = models.CharField(max_length=50)
-    ResumeFileName = models.CharField(max_length=500)
+    ResumeFile = models.FileField()
 
